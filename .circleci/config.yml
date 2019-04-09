@@ -23,6 +23,9 @@ jobs:
     - run:
         name: Run Tests
         command: ./gradlew lint test
+    - run:
+        name: Approve license for build tools
+        command: (echo y; echo y; echo y; echo y; echo y; echo y) | $ANDROID_HOME/tools/bin/sdkmanager --licenses
     - store_artifacts:
         path: app/build/reports
         destination: reports
